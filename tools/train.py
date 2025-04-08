@@ -4,11 +4,11 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load model：Training without pretrained weights
-    model = YOLO(r'path/to/your/QHNet_1.0/ultralytics/cfg/models/QHNet_N.yaml')  
+    model = YOLO(r'path/to/your/QHNet/main/cfg/models/QHNet_N.yaml')  
   
     # Training parameters ----------------------------------------------------------------------------------------------
     model.train(
-        data=r'path/to/your/QHNet_1.0/ultralytics/cfg/datasets/DUT_Anti-UAV_YOLO.yaml',
+        data=r'path/to/your/QHNet/main/cfg/datasets/DUT_Anti-UAV_YOLO.yaml',
         resume=False,  # Resume training from last checkpoint
         epochs=200,  # Number of epochs for training
         patience=50,  # Number of epochs with no improvement after which training stops early
