@@ -165,18 +165,7 @@ If you find our repo useful for your research, please cite us:
   year = {2025},
   pages = {1–14}
 }
-```
 
-This project is based on the open source codebase [YOLOv8](https://github.com/open-mmlab/mmyolo).
-
-```
-@misc{mmyolo2022,
-    title={{MMYOLO: OpenMMLab YOLO} series toolbox and benchmark},
-    author={MMYOLO Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmyolo}},
-    year={2022}
-}
-```
 
 ## License
 
