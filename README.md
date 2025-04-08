@@ -12,79 +12,79 @@
 
 ## Model Zoo 
 
-<!-- QHNet 表 -->
-<table style="width: 100%; table-layout: auto; border-collapse: collapse; margin-bottom: 20px;">
-  <thead align="center" style="background-color: #f2f2f2;">
+<table style="table-layout: fixed; width: 100%;">
+  <thead align="center">
     <tr>
-      <th style="padding: 10px; border: 1px solid #ccc;">Model</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">Resolution</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">Epoch</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">Params(M)</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">FLOPs(G)</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">AP</th>
-      <th style="padding: 10px; border: 1px solid #ccc;">AP<sub>50</sub></th>
-      <th style="padding: 10px; border: 1px solid #ccc;">AP<sub>75</sub></th>
-      <th style="padding: 10px; border: 1px solid #ccc;">Weight</th>
+      <th style="width: 11%;">Model</th>
+      <th style="width: 11%;">Resolution</th>
+      <th style="width: 11%;">Epoch</th>
+      <th style="width: 11%;">Params(M)</th>
+      <th style="width: 11%;">FLOPs(G)</th>
+      <th style="width: 11%;">AP</th>
+      <th style="width: 11%;">AP<sub>50</sub></th>
+      <th style="width: 11%;">AP<sub>75</sub></th>
+      <th style="width: 11%;">Weight</th>
     </tr>
   </thead>
   <tbody align="center">
     <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">QHNet-N</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">640</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">200</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">2.8</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">12.0</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">57.1</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">88.9</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">65.9</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td>QHNet-N</td>
+      <td>640</td>
+      <td>200</td>
+      <td>2.8</td>
+      <td>12.0</td>
+      <td>57.1</td>
+      <td>88.9</td>
+      <td>65.9</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
     </tr>
     <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">QHNet-S</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">640</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">300</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">4.5</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">8.7</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">43.4</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">23.7</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">48.3</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
+      <td>QHNet-S</td>
+      <td>640</td>
+      <td>300</td>
+      <td>4.5</td>
+      <td>8.7</td>
+      <td>43.4</td>
+      <td>23.7</td>
+      <td>48.3</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">QHNet-M</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">640</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">300</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">8.1</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">15.6</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">46.2</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">27.5</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">50.6</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a></td>
+      <td>QHNet-M</td>
+      <td>640</td>
+      <td>300</td>
+      <td>8.1</td>
+      <td>15.6</td>
+      <td>46.2</td>
+      <td>27.5</td>
+      <td>50.6</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">QHNet-L</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">640</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">300</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">8.1</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">15.6</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">46.2</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">26.9</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">50.5</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
+      <td>QHNet-L</td>
+      <td>640</td>
+      <td>300</td>
+      <td>8.1</td>
+      <td>15.6</td>
+      <td>46.2</td>
+      <td>26.9</td>
+      <td>50.5</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td style="padding: 10px; border: 1px solid #ccc;">QHNet-X</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">640</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">300</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">22.0</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">40.1</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">50.8</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">33.2</td>
-      <td style="padding: 10px; border: 1px solid #ccc;">54.8</td>
-      <td style="padding: 10px; border: 1px solid #ccc;"><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a></td>
+      <td>QHNet-X</td>
+      <td>640</td>
+      <td>300</td>
+      <td>22.0</td>
+      <td>40.1</td>
+      <td>50.8</td>
+      <td>33.2</td>
+      <td>54.8</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
   </tbody>
 </table>
+
 
 
 </details>
