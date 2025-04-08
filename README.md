@@ -8,7 +8,7 @@
 
 </div>
 
-<div align="center"><img src="assets/fig2.png" width="1500">
+<div align="center"><img src="assets/Fig2.png" width="1500">
 
 This repository contains the official implementation of the following paper:
 
