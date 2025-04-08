@@ -10,7 +10,7 @@
 </h1>
 <img src="qhnet/assets/Fig0.png" width="1500">
 
-## Model Zoo (#-table-of-contents)
+## Model Zoo 
 
 <details open>
 <summary><b>1. YOLO-MS</b></summary>
