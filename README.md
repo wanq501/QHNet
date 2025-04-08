@@ -1,25 +1,3 @@
-<style>
-  table {
-    width: 100%;
-    table-layout: auto;
-    border-collapse: collapse;
-    margin-bottom: 1rem;
-  }
-  th, td {
-    padding: 10px;
-    text-align: center;
-    border: 1px solid #ccc;
-    word-break: break-word;
-  }
-  thead {
-    background-color: #f2f2f2;
-  }
-  .table-wrapper {
-    overflow-x: auto;
-    margin-bottom: 2rem;
-  }
-</style>
-
 <h1> 
   <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p>
 <div align="center">
