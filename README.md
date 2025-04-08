@@ -94,7 +94,7 @@
 - Results of the mAP are evaluated on [DUT-Anti-UAV](https://cocodataset.org/#download) dataset with the input
   resolution of 640×640.
 
-</details>
+
 
 ## 🛠️ Dependencies and Installation [🔝](#-table-of-contents)
 
