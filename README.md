@@ -29,7 +29,7 @@
   </thead>
   <tbody align="center">
     <tr>
-      <td>XS</td>
+      <td>QHNet-N</td>
       <td>640</td>
       <td>300</td>
       <td>4.5</td>
@@ -41,7 +41,7 @@
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td>XS*</td>
+      <td>QHNet-S</td>
       <td>640</td>
       <td>300</td>
       <td>4.5</td>
@@ -53,7 +53,7 @@
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td>S</td>
+      <td>QHNet-M</td>
       <td>640</td>
       <td>300</td>
       <td>8.1</td>
@@ -65,7 +65,7 @@
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td>S*</td>
+      <td>QHNet-L</td>
       <td>640</td>
       <td>300</td>
       <td>8.1</td>
@@ -77,7 +77,7 @@
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-      <td>-</td>
+      <td>QHNet-X</td>
       <td>640</td>
       <td>300</td>
       <td>22.0</td>
@@ -87,18 +87,6 @@
       <td>54.8</td>
       <td>66.4</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a></td>
-    </tr>
-    <tr>
-      <td>-*</td>
-      <td>640</td>
-      <td>300</td>
-      <td>22.2</td>
-      <td>40.1</td>
-      <td>50.8</td>
-      <td>33.2</td>
-      <td>54.8</td>
-      <td>66.4</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
   </tbody>
 </table>
