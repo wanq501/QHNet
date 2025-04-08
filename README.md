@@ -1,4 +1,4 @@
-<h2> 
+<h1> 
   <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p>
 <div align="center">
 
@@ -7,41 +7,11 @@
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
 </div>
-</h2>
+</h1>
+<img src="qhnet/assets/Fig0.png" width="1500">
 
 
-
-
-<img src="qhnet/assets/Fig1.png" width="1500">
-<img src="qhnet/assets/Fig2.png" width="1300">
-
-This repository contains the official implementation of the following paper:
-
-> **YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-Time Object Detection**<br/>
-> [Yuming Chen](http://www.fishworld.site/), [Xinbin Yuan](https://github.com/YXB-NKU), [Ruiqi Wu](https://rq-wu.github.io/), [Jiabao Wang](https://mmcheng.net/wjb/), [Qibin Hou](https://houqb.github.io/), [Ming-Ming Cheng](https://mmcheng.net)<br/>
-> Under review
-
-\[Homepage (TBD)\]
-\[[Paper](https://arxiv.org/abs/2308.05480)\]
-\[知乎 (TBD)\]
-\[[集智书童](https://mp.weixin.qq.com/s/3oXJ1jFj19XHwy6pgPTXHQ)\]
-\[Poster (TBD)\]
-\[Video (TBD)\]
-
-<table>
-  <tbody>
-    <tr>
-        <td>
-            <img src='asserts/teaser_flops.png' alt='YOLOMS_TEASER0' width='500px'/>
-        </td>
-        <td>
-            <img src='asserts/teaser_params.png' alt='YOLOMS_TEASER0' width='500px'/>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-## 📄 Table of Contents
+## Table of Contents
 
 - [📄 Table of Contents](#-table-of-contents)
 - [✨ News 🔝](#-news-)
