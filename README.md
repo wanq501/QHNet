@@ -122,152 +122,35 @@
 
    You could run `python tools/train.py --help` to get detailed information of this scripts.
 
-   <details>
-    <summary> Detailed arguments </summary>
-
-   ```
-   positional arguments:
-   config                train config file path
-
-   optional arguments:
-   -h, --help            show this help message and exit
-   --work-dir WORK_DIR   the dir to save logs and models
-   --amp                 enable automatic-mixed-precision training
-   --resume [RESUME]     If specify checkpoint path, resume from it, while if not specify, try to auto resume from the latest checkpoint in the work directory.
-   --cfg-options CFG_OPTIONS [CFG_OPTIONS ...]
-                           override some settings in the used config, the key-value pair in xxx=yyy format will be merged into config file. If the value to be overwritten is a list, it should be like key="[a,b]" or key=a,b It also allows nested
-                           list/tuple values, e.g. key="[(a,b),(c,d)]" Note that the quotation marks are necessary and that no white space is allowed.
-   --launcher {none,pytorch,slurm,mpi}
-                           job launcher
-   --local_rank LOCAL_RANK
-   ```
-
-   </details>
 
 2. Evaluation
 
-   1.1 Single GPU
+   ```shell
+   python tools/val.py
+   ```
+
+   You could run `python tools/train.py --help` to get detailed information of this scripts.
+
+
+3. test
 
    ```shell
-   python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [optional arguments]
+   python tools/test.py
    ```
 
-   1.2 Multi GPU
+   You could run `python tools/train.py --help` to get detailed information of this scripts.
+
+4. Detect
 
    ```shell
-   CUDA_VISIBLE_DEVICES=x bash tools/dist_test.sh ${CONFIG_FILE} ${CHECKPOINT_FILE} ${GPU_NUM} [optional arguments]
+   python tools/detect.py
    ```
 
-   You could run `python tools/test.py --help` to get detailed information of this scripts.
-
-   <details>
-    <summary> Detailed arguments </summary>
-
-   ```
-   positional arguments:
-   config                test config file path
-   checkpoint            checkpoint file
-
-   optional arguments:
-   -h, --help            show this help message and exit
-   --work-dir WORK_DIR   the directory to save the file containing evaluation metrics
-   --out OUT             output result file (must be a .pkl file) in pickle format
-   --json-prefix JSON_PREFIX
-                           the prefix of the output json file without perform evaluation, which is useful when you want to format the result to a specific format and submit it to the test server
-   --tta                 Whether to use test time augmentation
-   --show                show prediction results
-   --deploy              Switch model to deployment mode
-   --show-dir SHOW_DIR   directory where painted images will be saved. If specified, it will be automatically saved to the work_dir/timestamp/show_dir
-   --wait-time WAIT_TIME
-                           the interval of show (s)
-   --cfg-options CFG_OPTIONS [CFG_OPTIONS ...]
-                           override some settings in the used config, the key-value pair in xxx=yyy format will be merged into config file. If the value to be overwritten is a list, it should be like key="[a,b]" or key=a,b It also allows nested
-                           list/tuple values, e.g. key="[(a,b),(c,d)]" Note that the quotation marks are necessary and that no white space is allowed.
-   --launcher {none,pytorch,slurm,mpi}
-                           job launcher
-   --local_rank LOCAL_RANK
-   ```
-
-   </details>
-
-3. Deployment
-
-```shell
-# Build docker images
-docker build docker/mmdeploy/ -t mmdeploy:inside --build-arg USE_SRC_INSIDE=true
-# Run docker container
-docker run --gpus all --name mmdeploy_yoloms -dit mmdeploy:inside
-# Convert ${CONFIG_FILE}
-python tools/misc/print_config.py ${O_CONFIG_FILE} --save-path ${CONFIG_FILE}
-
-# Copy local file into docker container
-docker cp deploy.sh mmdeploy_yoloms:/root/workspace
-docker cp ${DEPLOY_CONFIG_FILE}  mmdeploy_yoloms:/root/workspace/${DEPLOY_CONFIG_FILE}
-docker cp ${CONFIG_FILE} mmdeploy_yoloms:/root/workspace/${CONFIG_FILE}
-docker cp ${CHECKPOINT_FILE} mmdeploy_yoloms:/root/workspace/${CHECKPOINT_FILE}
-
-# Start docker container
-docker start mmdeploy_yoloms
-# Attach docker container
-docker attach mmdeploy_yoloms
-
-# Run the deployment shell
-sh deploy.sh ${DEPLOY_CONFIG_FILE} ${CONFIG_FILE} ${CHECKPOINT_FILE} ${SAVE_DIR}
-# Copy the results to local
-docker cp mmdeploy_yoloms:/root/workspace/${SAVE_DIR} ${SAVE_DIR}
-```
-
-- **DEPLOY_CONFIG_FILE**: Config file for deployment.
-- **O_CONFIG_FILE**: Original config file of model.
-- **CONFIG_FILE**: Converted config file of model.
-- **CHECKPOINT_FILE**: Checkpoint of model.
-- **SAVE_DIR**: Save dir.
-
-1. Test FPS
-
-   4.1 Deployed Model
-
-   ```shell
-   # Copy local file into docker container
-   docker cp ${DATA_DIR} mmdeploy_yoloms:/root/workspace/${DATA_DIR}
-   docker cp fps.sh mmdeploy_yoloms:/root/workspace
-   # Start docker container
-   docker start mmdeploy_yoloms
-   # Attach docker container
-   docker attach mmdeploy_yoloms
-   # In docker container
-   # Run the FPS shell
-   python mmdeploy/tools/profiler.py ${DEPLOY_CONFIG_FILE} \
-                                     ${CONFIG_FILE} \
-                                     ${DATASET} \
-                                     --model ${PROFILER_MODEL} \
-                                     --device ${DEVICE}
-   ```
-
-   4.2 Undeployed Model
-
-   ```shell
-   python tools/analysis_tools/benchmark.py ${CONFIG_FILE} --checkpoint ${CHECKPOINT_FILE} [optional arguments]
-   ```
-
-2. Test FLOPs and Params
-
-```shell
-python tools/analysis_tools/get_flops.py ${CONFIG_FILE} --shape 640 640 [optional arguments]
-```
+   You could run `python tools/train.py --help` to get detailed information of this scripts.
 
 
 
-## 🏗️ Supported Tasks [🔝](#-table-of-contents)
-
-- [x] Object Detection
-- [ ] Instance Segmentation (TBD)
-- [ ] Rotated Object Detection (TBD)
-- [ ] Object Tracking (TBD)
-- [ ] Detection in Crowded Scene (TBD)
-- [ ] Small Object Detection (TBD)
-
-## 📖 Citation [🔝](#-table-of-contents)
+## Citation
 
 If you find our repo useful for your research, please cite us:
 
@@ -285,7 +168,7 @@ If you find our repo useful for your research, please cite us:
 }
 ```
 
-This project is based on the open source codebase [MMYOLO](https://github.com/open-mmlab/mmyolo).
+This project is based on the open source codebase [YOLOv8](https://github.com/open-mmlab/mmyolo).
 
 ```
 @misc{mmyolo2022,
@@ -296,16 +179,9 @@ This project is based on the open source codebase [MMYOLO](https://github.com/op
 }
 ```
 
-## 📜 License [🔝](#-table-of-contents)
+## License
 
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
 
-## 📮 Contact [🔝](#-table-of-contents)
 
-For technical questions, please contact `chenyuming[AT]mail.nankai.edu.cn`.
-For commercial licensing, please contact `cmm[AT]nankai.edu.cn` and `andrewhoux[AT]gmail.com`.
 
-## 🤝 Acknowledgement [🔝](#-table-of-contents)
-
-This repo is modified from open source real-time object detection codebase [MMYOLO](https://github.com/open-mmlab/mmyolo).
-The README file is referred to [LED](https://github.com/Srameo/LED) and [CrossKD](https://github.com/jbwang1997/CrossKD)
