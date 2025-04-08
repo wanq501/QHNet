@@ -96,27 +96,25 @@
 
 
 
-## 🛠️ Dependencies and Installation [🔝](#-table-of-contents)
-
-> We provide a simple scrpit `install.sh` for installation, or refer to [install.md](docs/install.md) for more details.
+## Dependencies and Installation 
 
 1. Clone and enter the repo.
 
    ```shell
-   git clone https://github.com/FishAndWasabi/YOLO-MS.git
-   cd YOLO-MS
+   git clone https://github.com/wanq501/QHNet.git
+   cd QHNet
    ```
 
 2. Run `install.sh`.
 
    ```shell
-   bash install.sh
+   pip install -e .
    ```
 
 3. Activate your environment!
 
    ```shell
-   conda activate YOLO-MS
+   conda activate QHNet
    ```
 
 ## 👼 Quick Demo [🔝](#-table-of-contents)
