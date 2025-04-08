@@ -168,6 +168,11 @@
     </tbody>
 </table>
 
+Table Notes
+
+- Results of the mAP and speed are evaluated on [COCO val2017](https://cocodataset.org/#download) dataset with the input
+  resolution of 640×640.
+
 </details>
 
 ## 🛠️ Dependencies and Installation [🔝](#-table-of-contents)
