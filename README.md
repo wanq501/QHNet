@@ -12,9 +12,6 @@
 
 ## Model Zoo 
 
-<details open>
-<summary><b>1. YOLO-MS</b></summary>
-
 <table>
     <thead align="center">
     <tr>
@@ -24,9 +21,9 @@
         <th> Params(M) </th>
         <th> FLOPs(G) </th>
         <th> $AP$ </th>
-        <th> $AP_s$ </th>
-        <th> $AP_m$ </th>
-        <th> $AP_l$ </th>
+        <th> $AP_50$ </th>
+        <th> $AP_75$ </th>
+        <th>  </th>
         <th> Config </th>
         <th> 🔗  </th>
     </tr>
