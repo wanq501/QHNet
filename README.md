@@ -23,8 +23,8 @@
         <th> $AP$ </th>
         <th> $AP_50$ </th>
         <th> $AP_75$ </th>
-        <th>  </th>
-        <th> Config </th>
+        <th> BaiduYun Download </th>
+        <th> Google Download</th>
         <th> 🔗  </th>
     </tr>
     </thead>
