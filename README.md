@@ -148,17 +148,7 @@
 If you find our repo useful for your research, please cite us:
 
 ```
-@article{Chen2025,
-  title = {YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-time Object Detection},
-  ISSN = {1939-3539},
-  url = {http://dx.doi.org/10.1109/TPAMI.2025.3538473},
-  DOI = {10.1109/tpami.2025.3538473},
-  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
-  author = {Chen, Yuming and Yuan, Xinbin and Wang, Jiabao and Wu, Ruiqi and Li, Xiang and Hou, Qibin and Cheng, Ming-Ming},
-  year = {2025},
-  pages = {1–14}
-}
+
 ```
 
 ## License
