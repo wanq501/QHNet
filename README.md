@@ -13,161 +13,96 @@
 ## Model Zoo 
 
 <table>
-    <thead align="center">
+  <thead align="center">
     <tr>
-        <th> Model </th>
-        <th> Resolution </th>
-        <th> Epoch </th>
-        <th> Params(M) </th>
-        <th> FLOPs(G) </th>
-        <th> $AP$ </th>
-        <th> $AP_50$ </th>
-        <th> $AP_75$ </th>
-        <th> BaiduYun Download </th>
-        <th> Google Download</th>
-       
+      <th>Model</th>
+      <th>Resolution</th>
+      <th>Epoch</th>
+      <th>Params(M)</th>
+      <th>FLOPs(G)</th>
+      <th>AP</th>
+      <th>AP<sub>50</sub></th>
+      <th>AP<sub>75</sub></th>
+      <th>BaiduYun Download</th>
+      <th>Google Download</th>
     </tr>
-    </thead>
-    <tbody align="center">
+  </thead>
+  <tbody align="center">
     <tr>
-        <td style="width: 300pt"> XS </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 4.5 </td>
-        <td> 8.7 </td>
-        <td> 43.1 </td>
-        <td> 24.0 </td>
-        <td> 47.8 </td>
-        <td> 59.1 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>XS</td>
+      <td>640</td>
+      <td>300</td>
+      <td>4.5</td>
+      <td>8.7</td>
+      <td>43.1</td>
+      <td>24.0</td>
+      <td>47.8</td>
+      <td>59.1</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-        <td style="width: 300pt"> XS* </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 4.5 </td>
-        <td> 8.7 </td>
-        <td> 43.4 </td>
-        <td> 23.7 </td>
-        <td> 48.3 </td>
-        <td> 60.3 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>XS*</td>
+      <td>640</td>
+      <td>300</td>
+      <td>4.5</td>
+      <td>8.7</td>
+      <td>43.4</td>
+      <td>23.7</td>
+      <td>48.3</td>
+      <td>60.3</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-        <td> S </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 8.1 </td>
-        <td> 15.6 </td>
-        <td> 46.2 </td>
-        <td> 27.5 </td>
-        <td> 50.6 </td>
-        <td> 62.9 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>S</td>
+      <td>640</td>
+      <td>300</td>
+      <td>8.1</td>
+      <td>15.6</td>
+      <td>46.2</td>
+      <td>27.5</td>
+      <td>50.6</td>
+      <td>62.9</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-        <td> S* </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 8.1 </td>
-        <td> 15.6 </td>
-        <td> 46.2 </td>
-        <td> 26.9 </td>
-        <td> 50.5 </td>
-        <td> 63.0 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>S*</td>
+      <td>640</td>
+      <td>300</td>
+      <td>8.1</td>
+      <td>15.6</td>
+      <td>46.2</td>
+      <td>26.9</td>
+      <td>50.5</td>
+      <td>63.0</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-        <td> - </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 22.0 </td>
-        <td> 40.1 </td>
-        <td> 50.8 </td>
-        <td> 33.2 </td>
-        <td> 54.8 </td>
-        <td> 66.4 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>-</td>
+      <td>640</td>
+      <td>300</td>
+      <td>22.0</td>
+      <td>40.1</td>
+      <td>50.8</td>
+      <td>33.2</td>
+      <td>54.8</td>
+      <td>66.4</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
-        <td> -* </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td> 22.2 </td>
-        <td> 40.1 </td>
-        <td> 50.8 </td>
-        <td> 33.2 </td>
-        <td> 54.8 </td>
-        <td> 66.4 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        
+      <td>-*</td>
+      <td>640</td>
+      <td>300</td>
+      <td>22.2</td>
+      <td>40.1</td>
+      <td>50.8</td>
+      <td>33.2</td>
+      <td>54.8</td>
+      <td>66.4</td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
-    <!-- <tr>
-        <td> L </td>
-        <td> 640 </td>
-        <td> 300 </td>
-        <td colspan="8" > TBD </td>
-    </tr> -->
-    </tbody>
+  </tbody>
 </table>
 
-*\* refers to with SE attention*
-
-</details>
-
-<details open>
-<summary><b>2. YOLOv6</b></summary>
-
-<table>
-    <thead align="center">
-    <tr>
-        <th> Model </th>
-        <th> Resolution </th>
-        <th> Epoch </th>
-        <th> Params(M) </th>
-        <th> FLOPs(G) </th>
-        <th> $AP$ </th>
-        <th> $AP_s$ </th>
-        <th> $AP_m$ </th>
-        <th> $AP_l$ </th>
-        <th> Config </th>
-        <th> 🔗  </th>
-    </tr>
-    </thead>
-    <tbody align="center">
-    <tr>
-        <td style="width: 300pt"> t </td>
-        <td> 640 </td>
-        <td> 400 </td>
-        <td> 9.7 </td>
-        <td> 12.4 </td>
-        <td> 41.0 </td>
-        <td> 21.2 </td>
-        <td> 45.7 </td>
-        <td> 57.7 </td>
-        <td> [<a href="https://github.com/open-mmlab/mmyolo/blob/main/configs/yolov6/yolov6_t_syncbn_fast_8xb32-400e_coco.py">config</a>]  </td>
-        <td> [<a href="https://download.openmmlab.com/mmyolo/v0/yolov6/yolov6_t_syncbn_fast_8xb32-400e_coco/yolov6_t_syncbn_fast_8xb32-400e_coco_20221030_143755-cf0d278f.pth">model</a>] </td>
-    </tr>
-    <tr>
-        <td style="width: 300pt"> t-MS </td>
-        <td> 640 </td>
-        <td> 400 </td>
-        <td> 8.1 </td>
-        <td> 9.6 </td>
-        <td> 43.5 (+2.5) </td>
-        <td> 26.0 </td>
-        <td> 48.3 </td>
-        <td> 57.8 </td>
-        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yolomsv6/yolov6-ms_t_syncbn_fast_8xb32-400e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/1rRBuojakbnEJqFWz5KKsMbg6V4j__BP6/view?usp=drive_link">model</a>] </td>
-    </tr>
-    </tbody>
-</table>
 
 </details>
 
