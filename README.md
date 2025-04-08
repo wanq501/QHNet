@@ -129,7 +129,7 @@
 
 
 
-3. test
+3. Test
 
    ```shell
    python tools/test.py
@@ -141,8 +141,7 @@
    python tools/detect.py
    ```
 
-- Results of the mAP are evaluated on [DUT-Anti-UAV](https://cocodataset.org/#download) dataset with the input
-  resolution of 640×640.
+- Note: Each script includes detailed instructions on how to set parameters and use the script properly.
 
 ## Citation
 
