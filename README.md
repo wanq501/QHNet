@@ -115,16 +115,9 @@
 
 1. Training
 
-   1.1 Single GPU
 
    ```shell
-   python tools/train.py ${CONFIG_FILE} [optional arguments]
-   ```
-
-   1.2 Multi GPU
-
-   ```shell
-   CUDA_VISIBLE_DEVICES=x bash tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM} [optional arguments]
+   python tools/train.py
    ```
 
    You could run `python tools/train.py --help` to get detailed information of this scripts.
