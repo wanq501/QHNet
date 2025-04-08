@@ -119,7 +119,6 @@
    ```shell
    python tools/train.py
    ```
-   You could run `python tools/train.py --help` to get detailed information of this scripts.
 
 
 2. Evaluation
@@ -128,7 +127,6 @@
    python tools/val.py
    ```
 
-   You could run `python tools/train.py --help` to get detailed information of this scripts.
 
 
 3. test
@@ -137,17 +135,14 @@
    python tools/test.py
    ```
 
-   You could run `python tools/train.py --help` to get detailed information of this scripts.
-
 4. Detect
 
    ```shell
    python tools/detect.py
    ```
 
-   You could run `python tools/train.py --help` to get detailed information of this scripts.
-
-
+- Results of the mAP are evaluated on [DUT-Anti-UAV](https://cocodataset.org/#download) dataset with the input
+  resolution of 640×640.
 
 ## Citation
 
