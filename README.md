@@ -23,8 +23,7 @@
       <th>AP</th>
       <th>AP<sub>50</sub></th>
       <th>AP<sub>75</sub></th>
-      <th>BaiduYun Download</th>
-      <th>Google Download</th>
+      <th>Config</th>
     </tr>
   </thead>
   <tbody align="center">
@@ -37,7 +36,6 @@
       <td>57.1</td>
       <td>88.9</td>
       <td>65.9</td>
-      <td>59.1</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
     </tr>
     <tr>
@@ -49,7 +47,6 @@
       <td>43.4</td>
       <td>23.7</td>
       <td>48.3</td>
-      <td>60.3</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
@@ -61,7 +58,6 @@
       <td>46.2</td>
       <td>27.5</td>
       <td>50.6</td>
-      <td>62.9</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
@@ -73,7 +69,6 @@
       <td>46.2</td>
       <td>26.9</td>
       <td>50.5</td>
-      <td>63.0</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
     <tr>
@@ -85,7 +80,6 @@
       <td>50.8</td>
       <td>33.2</td>
       <td>54.8</td>
-      <td>66.4</td>
       <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a></td>
     </tr>
   </tbody>
