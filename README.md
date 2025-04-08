@@ -119,7 +119,6 @@
    ```shell
    python tools/train.py
    ```
-
    You could run `python tools/train.py --help` to get detailed information of this scripts.
 
 
