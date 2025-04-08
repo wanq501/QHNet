@@ -31,14 +31,14 @@
     <tr>
       <td>QHNet-N</td>
       <td>640</td>
-      <td>300</td>
-      <td>4.5</td>
-      <td>8.7</td>
-      <td>43.1</td>
-      <td>24.0</td>
-      <td>47.8</td>
+      <td>200</td>
+      <td>2.8</td>
+      <td>12.0</td>
+      <td>57.1</td>
+      <td>88.9</td>
+      <td>65.9</td>
       <td>59.1</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a></td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
     </tr>
     <tr>
       <td>QHNet-S</td>
