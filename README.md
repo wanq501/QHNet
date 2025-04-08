@@ -36,7 +36,7 @@
       <td>57.1</td>
       <td>88.9</td>
       <td>65.9</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">BaiduYun</a></td>
     </tr>
     <tr>
       <td>QHNet-S</td>
