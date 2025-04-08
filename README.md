@@ -21,7 +21,7 @@
       <th>Params(M)</th>
       <th>FLOPs(G)</th>
       <th>AP</th>
-      <th>$AP<sub>50</sub>$</th>
+      <th>$AP_{50}$</th>
       <th>AP<sub>75</sub></th>
       <th>BaiduYun Download</th>
       <th>Google Download</th>
