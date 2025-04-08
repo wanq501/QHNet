@@ -91,7 +91,7 @@
   </tbody>
 </table>
 
-- Results of the mAP and speed are evaluated on [COCO val2017](https://cocodataset.org/#download) dataset with the input
+- Results of the mAP are evaluated on [DUT-Anti-UAV](https://cocodataset.org/#download) dataset with the input
   resolution of 640×640.
 
 </details>
