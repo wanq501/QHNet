@@ -1,7 +1,5 @@
-<h2> <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p> </h2>
-
-<img src="qhnet/assets/Fig0.png" width="1500">
-
+<h2> 
+  <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p>
 <div align="center">
 
 ![Python 3.9](https://img.shields.io/badge/python-3.9-g)
@@ -9,7 +7,12 @@
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
 </div>
+</h2>
 
+
+
+
+<img src="qhnet/assets/Fig0.png" width="1500">
 <img src="qhnet/assets/Fig1.png" width="1500">
 
 This repository contains the official implementation of the following paper:
