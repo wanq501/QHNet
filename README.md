@@ -8,10 +8,6 @@
 
 </div>
 </h1>
-
-
-
-
 <img src="qhnet/assets/Fig0.png" width="1500">
 
 
