@@ -8,7 +8,7 @@
 
 </div>
 </h1>
-<img src="qhnet/assets/Fig0.png" width="1500">
+<img src="qhnet/assets/Fig1.png" width="1500">
 
 
 ## Table of Contents
