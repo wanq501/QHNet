@@ -10,15 +10,7 @@
 </h1>
 <img src="qhnet/assets/Fig0.png" width="1500">
 
-## 🏡 Model Zoo [🔝](#-table-of-contents)
-
-- [ ] YOLOv5-MS
-- [ ] YOLOX-MS
-- [x] [YOLOv6-MS](configs/yolov6_ms)
-- [ ] YOLOv7-MS
-- [ ] PPYOLOE-MS
-- [x] [YOLOv8-MS](configs/yolov8_ms)
-- [x] [YOLO-MS (Based on RTMDet)](configs/yoloms)
+## Model Zoo (#-table-of-contents)
 
 <details open>
 <summary><b>1. YOLO-MS</b></summary>
