@@ -23,7 +23,7 @@
       <th>AP</th>
       <th>AP<sub>50</sub></th>
       <th>AP<sub>75</sub></th>
-      <th>Config</th>
+      <th>Weight</th>
     </tr>
   </thead>
   <tbody align="center">
