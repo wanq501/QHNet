@@ -25,7 +25,7 @@
         <th> $AP_75$ </th>
         <th> BaiduYun Download </th>
         <th> Google Download</th>
-        <th> 🔗  </th>
+       
     </tr>
     </thead>
     <tbody align="center">
@@ -40,7 +40,7 @@
         <td> 47.8 </td>
         <td> 59.1 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/1dCjyDfMY-tThlPb7tQXXgrpHLIWSS_Zr/view?usp=sharing">model</a>] </td>
+        
     </tr>
     <tr>
         <td style="width: 300pt"> XS* </td>
