@@ -11,27 +11,6 @@
 <img src="qhnet/assets/Fig0.png" width="1500">
 
 
-## Table of Contents
-
-- [📄 Table of Contents](#-table-of-contents)
-- [✨ News 🔝](#-news-)
-- [🛠️ Dependencies and Installation 🔝](#️-dependencies-and-installation-)
-- [👼 Quick Demo 🔝](#-quick-demo-)
-- [🤖 Training and Evaluation 🔝](#-training-and-evaluation-)
-- [🏡 Model Zoo 🔝](#-model-zoo-)
-- [🏗️ Supported Tasks 🔝](#️-supported-tasks-)
-- [📖 Citation 🔝](#-citation-)
-- [📜 License 🔝](#-license-)
-- [📮 Contact 🔝](#-contact-)
-- [🤝 Acknowledgement 🔝](#-acknowledgement-)
-
-## ✨ News [🔝](#-table-of-contents)
-
-> Future work can be found in [todo.md](docs/todo.md).
-
-- **Feb, 2025**: 🔥 Our code is also implemented based on [Jittor](https://github.com/Jittor/jittor), and avaliable at [nk-yolo](https://github.com/NK-JittorCV/nk-yolo)!
-- **Jan, 2025**: 🔥 Our paper is accepted by TPAMI!
-- **Aug, 2023**: Our code is publicly available!
 
 ## 🛠️ Dependencies and Installation [🔝](#-table-of-contents)
 
