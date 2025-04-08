@@ -1,4 +1,4 @@
-<h2> 
+<h1> 
   <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p>
 <div align="center">
 
@@ -7,7 +7,7 @@
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
 </div>
-</h2>
+</h1>
 
 
 
