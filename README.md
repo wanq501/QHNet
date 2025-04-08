@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![Python 3.9](https://img.shields.io/badge/python-3.8-g)
-![pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.0-blue.svg)
+![Python 3.9](https://img.shields.io/badge/python-3.9-g)
+![pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.1-blue.svg)
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
 </div>
