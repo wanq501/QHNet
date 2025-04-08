@@ -1,14 +1,17 @@
-<h2> <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p> </h2>
+<h2> 
+  <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p>
+<div align="center">
 
 ![Python 3.9](https://img.shields.io/badge/python-3.9-g)
 ![pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.1-blue.svg)
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
-<div align="center">
-
-
-
 </div>
+</h2>
+
+
+
+
 <img src="qhnet/assets/Fig0.png" width="1500">
 <img src="qhnet/assets/Fig1.png" width="1500">
 
