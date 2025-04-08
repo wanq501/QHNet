@@ -85,7 +85,7 @@
       <td>64.0</td>
       <td>93.8</td>
       <td>74.3</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1ml-ihrPirE24wTlU77rliw?pwd=qukr">weight</a></td>
       <td>---</td>
     </tr>
   </tbody>
