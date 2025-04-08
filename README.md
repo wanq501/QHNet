@@ -1,8 +1,8 @@
-<h2> <p align=center> 🚀 YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-Time Object Detection </p> </h2>
+<h2> <p align=center> QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones </p> </h2>
 
 <div align="center">
 
-![Python 3.8](https://img.shields.io/badge/python-3.8-g)
+![Python 3.9](https://img.shields.io/badge/python-3.8-g)
 ![pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.0-blue.svg)
 [![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
