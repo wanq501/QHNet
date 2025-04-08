@@ -1,317 +1,599 @@
-English | [简体中文](README_cn.md)
+<h2> <p align=center> 🚀 YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-Time Object Detection </p> </h2>
 
-<div align="center"><img src="assets/logo.png" width="1500">
+<div align="center">
 
-![](https://img.shields.io/badge/language-python-blue.svg)
-![](https://img.shields.io/badge/license-Apache-000000.svg)
-![Contributing](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-[![README-cn](https://shields.io/badge/README-%E4%B8%AD%E6%96%87-blue)](README_cn.md)
-[![ThirdParty](https://img.shields.io/badge/ThirdParty--Resources-brightgreen)](#third-parry-resources)
-[![IndustryModels](https://img.shields.io/badge/Industry--Models-orange)](#industry-application-models)
+![Python 3.8](https://img.shields.io/badge/python-3.8-g)
+![pytorch 1.12.1](https://img.shields.io/badge/pytorch-1.12.0-blue.svg)
+[![docs](https://img.shields.io/badge/docs-latest-blue)](README.md)
 
 </div>
 
-## Introduction
-<div align="center"><img src="assets/overview.gif" width="1500"></div>
+This repository contains the official implementation of the following paper:
 
-Welcome to **DAMO-YOLO**! It is a fast and accurate object detection method, which is developed by TinyML Team from Alibaba DAMO Data Analytics and Intelligence Lab. And it achieves a higher performance than state-of-the-art YOLO series. DAMO-YOLO is extend from YOLO but with some new techs, including Neural Architecture Search (NAS) backbones, efficient Reparameterized Generalized-FPN (RepGFPN), a lightweight head with AlignedOTA label assignment, and distillation enhancement. For more details, please refer to our [Arxiv Report](https://arxiv.org/abs/2211.15444). Moreover, here you can find not only powerful models, but also highly efficient training strategies and complete tools from training to deployment.
+> **YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-Time Object Detection**<br/>
+> [Yuming Chen](http://www.fishworld.site/), [Xinbin Yuan](https://github.com/YXB-NKU), [Ruiqi Wu](https://rq-wu.github.io/), [Jiabao Wang](https://mmcheng.net/wjb/), [Qibin Hou](https://houqb.github.io/), [Ming-Ming Cheng](https://mmcheng.net)<br/>
+> Under review
 
-<div align="center"><img src="assets/curve.png" width="1200"></div>
+\[Homepage (TBD)\]
+\[[Paper](https://arxiv.org/abs/2308.05480)\]
+\[知乎 (TBD)\]
+\[[集智书童](https://mp.weixin.qq.com/s/3oXJ1jFj19XHwy6pgPTXHQ)\]
+\[Poster (TBD)\]
+\[Video (TBD)\]
 
-## Updates
-- **[2023/04/12: We release DAMO-YOLO v0.3.1!] ![new](https://img.alicdn.com/imgextra/i4/O1CN01kUiDtl1HVxN6G56vN_!!6000000000764-2-tps-43-19.png)**
-    * Add 701-categories DAMO-YOLO-S model, which cover more application scenarios and serve as high-quality pre-training model to improve the performance of downstream tasks。
-    * Upgrade the DAMO-YOLO-Nano series model, which achieves 32.3/38.2/40.5 mAP with only 1.56/3.69/6.04 Flops, and runs in real-time at 4.08/5.05/6.69ms using Intel-CPU. 
-    * Add DAMO-YOLO-L model, which achieves 51.9 mAP with 7.95ms latency using T4-GPU.
-- **[2023/03/13: We release DAMO-YOLO v0.3.0!]**
-    * Release DAMO-YOLO-Nano, which achieves 35.1 mAP with only 3.02GFlops.
-    * Upgrade the optimizer builder, edits the optimizer config, you are able to use any optimizer supported by Pytorch.
-    * Upgrade the data loading pipeline and training parameters, leading to significant improvements of DAMO-YOLO models, e.g., the mAP of DAMO-YOLO-T/S/M increased from 43.0/46.8/50.0 to 43.6/47.7/50.2 respectively. 
-- **[2023/02/15: Baseline for The 3rd Anti-UAV Challenge.]**
-    * Welcome to join [the 3rd Anti-UAV Challenge](https://anti-uav.github.io/Evaluate/) on CVPR2023. The Challenge provides baseline models trained by DAMO-YOLO, which can be found on [DamoYolo_Anti-UAV-23_S](https://modelscope.cn/models/damo/cv_tinynas_uav-detection_damoyolo/summary).
-- **[2023/01/07: We release DAMO-YOLO v0.2.1!]**
-    * Add [TensorRT Int8 Quantization Tutorial](./tools/partial_quantization/README.md), achieves 19% speed up with only 0.3% accuracy loss.
-    * Add [general demo tools](#quick-start), support TensorRT/Onnx/Torch based vidoe/image/camera inference.
-    * Add more [industry application models](#industry-application-models), including [human detection](https://www.modelscope.cn/models/damo/cv_tinynas_human-detection_damoyolo/summary), [helmet detection](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_safety-helmet/summary), [facemask detection](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_facemask/summary) and [cigarette detection](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_cigarette/summary).
-    * Add [third-party resources](#third-party-resources), including [DAMO-YOLO Code Interpretation](https://blog.csdn.net/jyyqqq/article/details/128419143), [Practical Example for Finetuning on Custom Dataset](https://blog.csdn.net/Cwhgn/article/details/128447380?spm=1001.2014.3001.5501). 
-- **[2022/12/15: We release  DAMO-YOLO v0.1.1!]**
-  * Add a detailed [Custom Dataset Finetune Tutorial](./assets/CustomDatasetTutorial.md).
-  * The stuck problem caused by no-label data (*e.g.*, [ISSUE#30](https://github.com/tinyvision/DAMO-YOLO/issues/30)) is solved. Feel free to contact us, we are 24h stand by.
+<table>
+  <tbody>
+    <tr>
+        <td>
+            <img src='asserts/teaser_flops.png' alt='YOLOMS_TEASER0' width='500px'/>
+        </td>
+        <td>
+            <img src='asserts/teaser_params.png' alt='YOLOMS_TEASER0' width='500px'/>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-## Web Demo
-- [DAMO-YOLO-T](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo-t/summary), [DAMO-YOLO-S](https://modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo/summary), [DAMO-YOLO-M](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo-m/summary) is integrated into ModelScope. Training is supported on [ModelScope](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo/summary) now! **Come and try DAMO-YOLO with free GPU resources provided by ModelScope.** 
+## 📄 Table of Contents
 
-## Model Zoo
-### General Models
+- [📄 Table of Contents](#-table-of-contents)
+- [✨ News 🔝](#-news-)
+- [🛠️ Dependencies and Installation 🔝](#️-dependencies-and-installation-)
+- [👼 Quick Demo 🔝](#-quick-demo-)
+- [🤖 Training and Evaluation 🔝](#-training-and-evaluation-)
+- [🏡 Model Zoo 🔝](#-model-zoo-)
+- [🏗️ Supported Tasks 🔝](#️-supported-tasks-)
+- [📖 Citation 🔝](#-citation-)
+- [📜 License 🔝](#-license-)
+- [📮 Contact 🔝](#-contact-)
+- [🤝 Acknowledgement 🔝](#-acknowledgement-)
 
-|Model |size |mAP<sup>val<br>0.5:0.95 | Latency T4<br>TRT-FP16-BS1| FLOPs<br>(G)| Params<br>(M)| AliYun Download | Google Download|
-| ------        |:---: | :---:     |:---:|:---: | :---: | :---:| :---:|
-|[DAMO-YOLO-T](./configs/damoyolo_tinynasL20_T.py) | 640 | 42.0  | 2.78  | 18.1  | 8.5  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL20_T_420.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL20_T_420.onnx)|--|
-|[DAMO-YOLO-T*](./configs/damoyolo_tinynasL20_T.py) | 640 | 43.6  | 2.78  | 18.1  | 8.5  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL20_T_436.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL20_T_436.onnx)|--|
-|[DAMO-YOLO-S](./configs/damoyolo_tinynasL25_S.py) | 640 | 46.0  | 3.83  | 37.8  | 16.3  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL25_S_460.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL25_S_460.onnx)|--|
-|[DAMO-YOLO-S*](./configs/damoyolo_tinynasL25_S.py) | 640 | 47.7  | 3.83  | 37.8  | 16.3 |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL25_S_477.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL25_S_477.onnx) |--|
-|[DAMO-YOLO-M](./configs/damoyolo_tinynasL35_M.py) | 640 | 49.2  | 5.62  | 61.8  | 28.2  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL35_M_492.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL35_M_492.onnx)|--|
-|[DAMO-YOLO-M*](./configs/damoyolo_tinynasL35_M.py) | 640 | 50.2  | 5.62  | 61.8  | 28.2 |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL35_M_502.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL35_M_502.onnx)|--|
-|[DAMO-YOLO-L](./configs/damoyolo_tinynasL45_L.py) | 640 | 50.8  | 7.95  | 97.3  | 42.1  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL45_L_508.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL45_L_508.onnx)|--|
-|[DAMO-YOLO-L*](./configs/damoyolo_tinynasL45_L.py) | 640 | 51.9  | 7.95  | 97.3  | 42.1  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/clean_model_0317/damoyolo_tinynasL45_L_519.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/damoyolo_tinynasL45_L_519.onnx)|--|
+## ✨ News [🔝](#-table-of-contents)
 
-<details>
+> Future work can be found in [todo.md](docs/todo.md).
 
-<summary>Legacy models</summary>
+- **Feb, 2025**: 🔥 Our code is also implemented based on [Jittor](https://github.com/Jittor/jittor), and avaliable at [nk-yolo](https://github.com/NK-JittorCV/nk-yolo)!
+- **Jan, 2025**: 🔥 Our paper is accepted by TPAMI!
+- **Aug, 2023**: Our code is publicly available!
 
-|Model |size |mAP<sup>val<br>0.5:0.95 | Latency T4<br>TRT-FP16-BS1| FLOPs<br>(G)| Params<br>(M)| AliYun Download | Google Download|
-| ------        |:---: | :---:     |:---:|:---: | :---: | :---:| :---:|
-|[DAMO-YOLO-T](./configs/damoyolo_tinynasL20_T.py) | 640 | 41.8  | 2.78  | 18.1  | 8.5  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/before_distill/damoyolo_tinynasL20_T_418.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/before_distill/damoyolo_tinynasL20_T_418.onnx)|[torch](https://drive.google.com/file/d/1-9NzCRKJZs3ea_n35seEYSpq3M_RkhcT/view?usp=sharing),[onnx](https://drive.google.com/file/d/1-7s8fqK5KC8z4sXCuh3N900chMtMSYri/view?usp=sharing)|
-|[DAMO-YOLO-T*](./configs/damoyolo_tinynasL20_T.py) | 640 | 43.0  | 2.78  | 18.1  | 8.5  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/damoyolo_tinynasL20_T.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/damoyolo_tinynasL20_T.onnx) |[torch](https://drive.google.com/file/d/1-6fBf_oe9vITSTYgQkaYklL94REz2zCh/view?usp=sharing),[onnx](https://drive.google.com/file/d/1-1lK83OwVKL4lgHTlbgEZ8pYMYZHhEtE/view?usp=sharing)|
-|[DAMO-YOLO-S](./configs/damoyolo_tinynasL25_S.py) | 640 | 45.6  | 3.83  | 37.8  | 16.3  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/before_distill/damoyolo_tinynasL25_S_456.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/before_distill/damoyolo_tinynasL25_S_456.onnx)|[torch](https://drive.google.com/file/d/1-0GV1lxUS6bLHTOs7aNojsItgjDT6rK8/view?usp=sharing),[onnx](https://drive.google.com/file/d/1--CaKMHm-SjLnprZDMksO-jnbGbV9Zhp/view?usp=sharing)|
-|[DAMO-YOLO-S*](./configs/damoyolo_tinynasL25_S.py) | 640 | 46.8  | 3.83  | 37.8  | 16.3 |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/damoyolo_tinynasL25_S.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/damoyolo_tinynasL25_S.onnx) |[torch](https://drive.google.com/file/d/1-O-ObHN970GRVKkL1TiAxfoMCpYGJS6B/view?usp=sharing),[onnx](https://drive.google.com/file/d/1-NDqCpz2rs1IiKNyIzo1KSxoJACKV65N/view?usp=sharing)|
-|[DAMO-YOLO-M](./configs/damoyolo_tinynasL35_M.py) | 640 | 48.7  | 5.62  | 61.8  | 28.2  |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/before_distill/damoyolo_tinynasL35_M_487.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/before_distill/damoyolo_tinynasL35_M_487.onnx)|[torch](https://drive.google.com/file/d/1-RMevyb9nwpDBeTPttiV_iwfsiW_M9ST/view?usp=sharing),[onnx](https://drive.google.com/file/d/1-Cs4ozjAhTH_W32tGnq_L5TfE22vAD_c/view?usp=sharing)|
-|[DAMO-YOLO-M*](./configs/damoyolo_tinynasL35_M.py) | 640 | 50.0  | 5.62  | 61.8  | 28.2 |[torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/damoyolo_tinynasL35_M.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/damoyolo_tinynasL35_M.onnx)|[torch](https://drive.google.com/file/d/1-RoKaO7U9U1UrweJb7c4Hs_S_qKFDExc/view?usp=sharing),[onnx](https://drive.google.com/file/d/1-HRkLfGoFBjdQDiWudsS1zxicx53Pu5m/view?usp=sharing)|
+## 🛠️ Dependencies and Installation [🔝](#-table-of-contents)
 
-</details>
+> We provide a simple scrpit `install.sh` for installation, or refer to [install.md](docs/install.md) for more details.
 
-- We report the mAP of models on COCO2017 validation set, with multi-class NMS.
-- The latency in this table is measured without post-processing(NMS).
-- \* denotes the model trained with distillation.
-- We use S as teacher to distill T, and M as teacher to distill S, ans L as teacher to distill M, while L is distilled by it self.
+1. Clone and enter the repo.
 
+   ```shell
+   git clone https://github.com/FishAndWasabi/YOLO-MS.git
+   cd YOLO-MS
+   ```
 
-### Light Models
-|Model |size |mAP<sup>val<br>0.5:0.95 | Latency(ms) CPU<br> OpenVino-Intel8163| FLOPs<br>(G)| Params<br>(M)| AliYun Download | Google Download|
-| ------        |:---: | :---:     |:---:|:---: | :---: | :---:| :---:|
-| [DAMO-YOLO-Ns](./configs/damoyolo_tinynasL18_Ns.py)| 416| 32.3 | 4.08| 1.56 | 1.41 | [torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/ckpt/before_distill/damoyolo_nano_small.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/before_distill/damoyolo_tinynasL18_Ns.onnx) | -- |
-| [DAMO-YOLO-Nm](./configs/damoyolo_tinynasL18_Nm.py)| 416| 38.2 | 5.05| 3.69 | 2.71 | [torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/ckpt/before_distill/damoyolo_nano_middle.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/before_distill/damoyolo_tinynasL18_Nm.onnx) | -- |
-| [DAMO-YOLO-Nl](./configs/damoyolo_tinynasL20_Nl.py)| 416| 40.5 | 6.69| 6.04 | 5.69 | [torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/ckpt/before_distill/damoyolo_nano_large.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/release_model/onnx/before_distill/damoyolo_tinynasL20_Nl.onnx) | -- |
+2. Run `install.sh`.
 
-- We report the mAP of models on COCO2017 validation set, with multi-class NMS.
-- The latency in this table is measured without post-processing, following [picodet](https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.6/configs/picodet).
-- The latency is evaluated based on [OpenVINO-2022.3.0](https://github.com/openvinotoolkit/openvino), using commands below:
-     ```shell
-    # onnx export, enable --benchmark to ignore postprocess
-    python tools/converter.py -f configs/damoyolo_tinynasL18_Ns.py -c ../damoyolo_tinynasL18_Ns.pth --batch_size 1  --img_size 416 --benchmark
-    # model transform
-    mo --input_model damoyolo_tinynasL18_Ns.onnx --data_type FP16
-    # latency benchmark
-    ./benchmark_app -m damoyolo_tinynasL18_Ns.xml -i ./assets/dog.jpg -api sync -d CPU -b 1 -hint latency 
-    ```
-                                                        
+   ```shell
+   bash install.sh
+   ```
 
-### 701 categories DAMO-YOLO Model
-We provide DAMO-YOLO-S model with 701 categories for general object detection, which has been trained on a large dataset including COCO, Objects365 and OpenImage. This model can also serve as a pre-trained model for fine-tuning in downstream tasks, enabling you to achieve better performance with ease.
+3. Activate your environment!
 
-|Pretrained Model | Downstream Task |mAP<sup>val<br>0.5:0.95 | AliYun Download | Google Download|
-| ------        |:---: | :---:     |:---:|:---: |
-| 80-categories-DAMO-YOLO-S | VisDrone | 24.6 | [torch](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/clean_models/before_distill/damoyolo_tinynasL25_S_456.pth),[onnx](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/onnx/before_distill/damoyolo_tinynasL25_S_456.onnx) | - |
-| 701-categories-DAMO-YOLO-S | VisDrone | 26.6 | [torch](http://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/Large-Scale-Training/damo_yolo_s_700%2B.pth),[onnx](http://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/Large-Scale-Training/damo_yolo_s_700%2B.onnx) | - |
-- Note: The downloadable model is a pretrained model with 701 categories datasets. We demonstrate the VisDrone results to show that our pretrained model can enhance the performance of downstream tasks.
-<div align="left"><img src="assets/701class_cmp_horizontal.png" width="750"></div>
+   ```shell
+   conda activate YOLO-MS
+   ```
 
-## Quick Start
+## 👼 Quick Demo [🔝](#-table-of-contents)
 
-<details>
-<summary>Installation</summary>
-
-Step1. Install DAMO-YOLO.
 ```shell
-git clone https://github.com/tinyvision/damo-yolo.git
-cd DAMO-YOLO/
-conda create -n DAMO-YOLO python=3.7 -y
-conda activate DAMO-YOLO
-conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=10.2 -c pytorch
-pip install -r requirements.txt
-export PYTHONPATH=$PWD:$PYTHONPATH
+python demo/image_demo.py ${IMAGE_PATH} ${CONFIG_FILE} ${CHECKPOINT_FILE} [optional arguments]
+
+# for sam output
+python demo/sam_demo.py ${IMAGE_PATH} ${CONFIG_FILE} ${CHECKPOINT_FILE} --sam_size ${SAM_MODEL_SIZE} --sam_model ${SAM_MODEL_PATH}
 ```
-Step2. Install [pycocotools](https://github.com/cocodataset/cocoapi).
 
-```shell
-pip install cython;
-pip install git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI # for Linux
-pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonAPI # for Windows
-```
-</details>
+You could run `python demo/image_demo.py --help` to get detailed information of this scripts.
 
 <details>
-<summary>Demo</summary>
+<summary> Detailed arguments </summary>
 
-Step1. Download a pretrained torch, onnx or tensorRT engine from the benchmark table, e.g., damoyolo_tinynasL25_S.pth, damoyolo_tinynasL25_S.onnx, damoyolo_tinynasL25_S.trt.
+```
+positional arguments:
+  img                   Image path, include image file, dir and URL.
+  config                Config file
+  checkpoint            Checkpoint file
 
-Step2. Use -f(config filename) to specify your detector's config, --path to specify input data path, image/video/camera are supported. For example:
-```shell
-# torch engine with image
-python tools/demo.py image -f ./configs/damoyolo_tinynasL25_S.py --engine ./damoyolo_tinynasL25_S.pth --conf 0.6 --infer_size 640 640 --device cuda --path ./assets/dog.jpg
-
-# onnx engine with video
-python tools/demo.py video -f ./configs/damoyolo_tinynasL25_S.py --engine ./damoyolo_tinynasL25_S.onnx --conf 0.6 --infer_size 640 640 --device cuda --path your_video.mp4
-
-# tensorRT engine with camera
-python tools/demo.py camera -f ./configs/damoyolo_tinynasL25_S.py --engine ./damoyolo_tinynasL25_S.trt --conf 0.6 --infer_size 640 640 --device cuda --camid 0
+optional arguments:
+  -h, --help            show this help message and exit
+  --out-dir OUT_DIR     Path to output file
+  --device DEVICE       Device used for inference
+  --show                Show the detection results
+  --deploy              Switch model to deployment mode
+  --tta                 Whether to use test time augmentation
+  --score-thr SCORE_THR
+                        Bbox score threshold
+  --class-name CLASS_NAME [CLASS_NAME ...]
+                        Only Save those classes if set
+  --to-labelme          Output labelme style label file
+  
+  --sam_size            Default: vit_h, Optional: vit_l, vit_b
+  --sam_model           Path of the sam model checkpoint
 ```
 
 </details>
 
+<table>
+  <tbody>
+    <tr>
+        <td>
+            <img src='demo/demo.jpg' alt='DEMO' width='500px'/>
+        </td>
+        <td>
+            <img src='asserts/demo_output.jpg' alt='DEMO_OUTPUT' width='500px'/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src='demo/demo.jpg' alt='DEMO' width='500px'/>
+        </td>
+        <td>
+            <img src='asserts/demo_sam.jpg' alt='DEMO_SAM_OUTPUT' width='500px'/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src='asserts/demo.gif' alt='DEMO_VIDEO' width='500px'/>
+        </td>
+        <td>
+            <img src='asserts/demo_output.gif' alt='DEMO_VIDEO_OUTPUT' width='500px'/>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-<details>
-<summary>Reproduce our results on COCO</summary>
+## 🤖 Training and Evaluation [🔝](#-table-of-contents)
 
-Step1. Prepare COCO dataset
+1. Training
+
+   1.1 Single GPU
+
+   ```shell
+   python tools/train.py ${CONFIG_FILE} [optional arguments]
+   ```
+
+   1.2 Multi GPU
+
+   ```shell
+   CUDA_VISIBLE_DEVICES=x bash tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM} [optional arguments]
+   ```
+
+   You could run `python tools/train.py --help` to get detailed information of this scripts.
+
+   <details>
+    <summary> Detailed arguments </summary>
+
+   ```
+   positional arguments:
+   config                train config file path
+
+   optional arguments:
+   -h, --help            show this help message and exit
+   --work-dir WORK_DIR   the dir to save logs and models
+   --amp                 enable automatic-mixed-precision training
+   --resume [RESUME]     If specify checkpoint path, resume from it, while if not specify, try to auto resume from the latest checkpoint in the work directory.
+   --cfg-options CFG_OPTIONS [CFG_OPTIONS ...]
+                           override some settings in the used config, the key-value pair in xxx=yyy format will be merged into config file. If the value to be overwritten is a list, it should be like key="[a,b]" or key=a,b It also allows nested
+                           list/tuple values, e.g. key="[(a,b),(c,d)]" Note that the quotation marks are necessary and that no white space is allowed.
+   --launcher {none,pytorch,slurm,mpi}
+                           job launcher
+   --local_rank LOCAL_RANK
+   ```
+
+   </details>
+
+2. Evaluation
+
+   1.1 Single GPU
+
+   ```shell
+   python tools/test.py ${CONFIG_FILE} ${CHECKPOINT_FILE} [optional arguments]
+   ```
+
+   1.2 Multi GPU
+
+   ```shell
+   CUDA_VISIBLE_DEVICES=x bash tools/dist_test.sh ${CONFIG_FILE} ${CHECKPOINT_FILE} ${GPU_NUM} [optional arguments]
+   ```
+
+   You could run `python tools/test.py --help` to get detailed information of this scripts.
+
+   <details>
+    <summary> Detailed arguments </summary>
+
+   ```
+   positional arguments:
+   config                test config file path
+   checkpoint            checkpoint file
+
+   optional arguments:
+   -h, --help            show this help message and exit
+   --work-dir WORK_DIR   the directory to save the file containing evaluation metrics
+   --out OUT             output result file (must be a .pkl file) in pickle format
+   --json-prefix JSON_PREFIX
+                           the prefix of the output json file without perform evaluation, which is useful when you want to format the result to a specific format and submit it to the test server
+   --tta                 Whether to use test time augmentation
+   --show                show prediction results
+   --deploy              Switch model to deployment mode
+   --show-dir SHOW_DIR   directory where painted images will be saved. If specified, it will be automatically saved to the work_dir/timestamp/show_dir
+   --wait-time WAIT_TIME
+                           the interval of show (s)
+   --cfg-options CFG_OPTIONS [CFG_OPTIONS ...]
+                           override some settings in the used config, the key-value pair in xxx=yyy format will be merged into config file. If the value to be overwritten is a list, it should be like key="[a,b]" or key=a,b It also allows nested
+                           list/tuple values, e.g. key="[(a,b),(c,d)]" Note that the quotation marks are necessary and that no white space is allowed.
+   --launcher {none,pytorch,slurm,mpi}
+                           job launcher
+   --local_rank LOCAL_RANK
+   ```
+
+   </details>
+
+3. Deployment
+
 ```shell
-cd <DAMO-YOLO Home>
-ln -s /path/to/your/coco ./datasets/coco
+# Build docker images
+docker build docker/mmdeploy/ -t mmdeploy:inside --build-arg USE_SRC_INSIDE=true
+# Run docker container
+docker run --gpus all --name mmdeploy_yoloms -dit mmdeploy:inside
+# Convert ${CONFIG_FILE}
+python tools/misc/print_config.py ${O_CONFIG_FILE} --save-path ${CONFIG_FILE}
+
+# Copy local file into docker container
+docker cp deploy.sh mmdeploy_yoloms:/root/workspace
+docker cp ${DEPLOY_CONFIG_FILE}  mmdeploy_yoloms:/root/workspace/${DEPLOY_CONFIG_FILE}
+docker cp ${CONFIG_FILE} mmdeploy_yoloms:/root/workspace/${CONFIG_FILE}
+docker cp ${CHECKPOINT_FILE} mmdeploy_yoloms:/root/workspace/${CHECKPOINT_FILE}
+
+# Start docker container
+docker start mmdeploy_yoloms
+# Attach docker container
+docker attach mmdeploy_yoloms
+
+# Run the deployment shell
+sh deploy.sh ${DEPLOY_CONFIG_FILE} ${CONFIG_FILE} ${CHECKPOINT_FILE} ${SAVE_DIR}
+# Copy the results to local
+docker cp mmdeploy_yoloms:/root/workspace/${SAVE_DIR} ${SAVE_DIR}
 ```
 
-Step 2. Reproduce our results on COCO by specifying -f(config filename)
+- **DEPLOY_CONFIG_FILE**: Config file for deployment.
+- **O_CONFIG_FILE**: Original config file of model.
+- **CONFIG_FILE**: Converted config file of model.
+- **CHECKPOINT_FILE**: Checkpoint of model.
+- **SAVE_DIR**: Save dir.
+
+1. Test FPS
+
+   4.1 Deployed Model
+
+   ```shell
+   # Copy local file into docker container
+   docker cp ${DATA_DIR} mmdeploy_yoloms:/root/workspace/${DATA_DIR}
+   docker cp fps.sh mmdeploy_yoloms:/root/workspace
+   # Start docker container
+   docker start mmdeploy_yoloms
+   # Attach docker container
+   docker attach mmdeploy_yoloms
+   # In docker container
+   # Run the FPS shell
+   python mmdeploy/tools/profiler.py ${DEPLOY_CONFIG_FILE} \
+                                     ${CONFIG_FILE} \
+                                     ${DATASET} \
+                                     --model ${PROFILER_MODEL} \
+                                     --device ${DEVICE}
+   ```
+
+   4.2 Undeployed Model
+
+   ```shell
+   python tools/analysis_tools/benchmark.py ${CONFIG_FILE} --checkpoint ${CHECKPOINT_FILE} [optional arguments]
+   ```
+
+2. Test FLOPs and Params
+
 ```shell
-python -m torch.distributed.launch --nproc_per_node=8 tools/train.py -f configs/damoyolo_tinynasL25_S.py
+python tools/analysis_tools/get_flops.py ${CONFIG_FILE} --shape 640 640 [optional arguments]
 ```
+
+## 🏡 Model Zoo [🔝](#-table-of-contents)
+
+- [ ] YOLOv5-MS
+- [ ] YOLOX-MS
+- [x] [YOLOv6-MS](configs/yolov6_ms)
+- [ ] YOLOv7-MS
+- [ ] PPYOLOE-MS
+- [x] [YOLOv8-MS](configs/yolov8_ms)
+- [x] [YOLO-MS (Based on RTMDet)](configs/yoloms)
+
+<details open>
+<summary><b>1. YOLO-MS</b></summary>
+
+<table>
+    <thead align="center">
+    <tr>
+        <th> Model </th>
+        <th> Resolution </th>
+        <th> Epoch </th>
+        <th> Params(M) </th>
+        <th> FLOPs(G) </th>
+        <th> $AP$ </th>
+        <th> $AP_s$ </th>
+        <th> $AP_m$ </th>
+        <th> $AP_l$ </th>
+        <th> Config </th>
+        <th> 🔗  </th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr>
+        <td style="width: 300pt"> XS </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 4.5 </td>
+        <td> 8.7 </td>
+        <td> 43.1 </td>
+        <td> 24.0 </td>
+        <td> 47.8 </td>
+        <td> 59.1 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1dCjyDfMY-tThlPb7tQXXgrpHLIWSS_Zr/view?usp=sharing">model</a>] </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> XS* </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 4.5 </td>
+        <td> 8.7 </td>
+        <td> 43.4 </td>
+        <td> 23.7 </td>
+        <td> 48.3 </td>
+        <td> 60.3 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1-GdPJX_GAfH9sXAHdRmFRTNR0kL0l5v8/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <tr>
+        <td> S </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 8.1 </td>
+        <td> 15.6 </td>
+        <td> 46.2 </td>
+        <td> 27.5 </td>
+        <td> 50.6 </td>
+        <td> 62.9 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1inr-4aI9C4hOynBgmNqKyZ4-60MSoX5F/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <tr>
+        <td> S* </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 8.1 </td>
+        <td> 15.6 </td>
+        <td> 46.2 </td>
+        <td> 26.9 </td>
+        <td> 50.5 </td>
+        <td> 63.0 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/12mtXMOJDfuGdxImuPewq3-WJ0kanPjAx/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <tr>
+        <td> - </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 22.0 </td>
+        <td> 40.1 </td>
+        <td> 50.8 </td>
+        <td> 33.2 </td>
+        <td> 54.8 </td>
+        <td> 66.4 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/10JOBcIDkKDE4UpcKypnf8izSYJ_-z0P7/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <tr>
+        <td> -* </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td> 22.2 </td>
+        <td> 40.1 </td>
+        <td> 50.8 </td>
+        <td> 33.2 </td>
+        <td> 54.8 </td>
+        <td> 66.4 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1Gf5g7Jssu88wZpPQDwNiqMIEkK4MpsdM/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <!-- <tr>
+        <td> L </td>
+        <td> 640 </td>
+        <td> 300 </td>
+        <td colspan="8" > TBD </td>
+    </tr> -->
+    </tbody>
+</table>
+
+*\* refers to with SE attention*
+
 </details>
 
-<details>
-<summary>Finetune on your data</summary>
+<details open>
+<summary><b>2. YOLOv6</b></summary>
 
-Please refer to [custom dataset tutorial](./assets/CustomDatasetTutorial.md) for details.
+<table>
+    <thead align="center">
+    <tr>
+        <th> Model </th>
+        <th> Resolution </th>
+        <th> Epoch </th>
+        <th> Params(M) </th>
+        <th> FLOPs(G) </th>
+        <th> $AP$ </th>
+        <th> $AP_s$ </th>
+        <th> $AP_m$ </th>
+        <th> $AP_l$ </th>
+        <th> Config </th>
+        <th> 🔗  </th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr>
+        <td style="width: 300pt"> t </td>
+        <td> 640 </td>
+        <td> 400 </td>
+        <td> 9.7 </td>
+        <td> 12.4 </td>
+        <td> 41.0 </td>
+        <td> 21.2 </td>
+        <td> 45.7 </td>
+        <td> 57.7 </td>
+        <td> [<a href="https://github.com/open-mmlab/mmyolo/blob/main/configs/yolov6/yolov6_t_syncbn_fast_8xb32-400e_coco.py">config</a>]  </td>
+        <td> [<a href="https://download.openmmlab.com/mmyolo/v0/yolov6/yolov6_t_syncbn_fast_8xb32-400e_coco/yolov6_t_syncbn_fast_8xb32-400e_coco_20221030_143755-cf0d278f.pth">model</a>] </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> t-MS </td>
+        <td> 640 </td>
+        <td> 400 </td>
+        <td> 8.1 </td>
+        <td> 9.6 </td>
+        <td> 43.5 (+2.5) </td>
+        <td> 26.0 </td>
+        <td> 48.3 </td>
+        <td> 57.8 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yolomsv6/yolov6-ms_t_syncbn_fast_8xb32-400e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1rRBuojakbnEJqFWz5KKsMbg6V4j__BP6/view?usp=drive_link">model</a>] </td>
+    </tr>
+    </tbody>
+</table>
 
 </details>
 
+<details open>
+<summary><b>3. YOLOv8</b></summary>
 
+<table>
+    <thead align="center">
+    <tr>
+        <th> Model </th>
+        <th> Resolution </th>
+        <th> Epoch </th>
+        <th> Params(M) </th>
+        <th> FLOPs(G) </th>
+        <th> $AP$ </th>
+        <th> $AP_s$ </th>
+        <th> $AP_m$ </th>
+        <th> $AP_l$ </th>
+        <th> Config </th>
+        <th> 🔗  </th>
+    </tr>
+    </thead>
+    <tbody align="center">
+    <tr>
+        <td style="width: 300pt"> n </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td> 2.9 </td>
+        <td> 4.4 </td>
+        <td> 37.2 </td>
+        <td> 18.9 </td>
+        <td> 40.5 </td>
+        <td> 52.5 </td>
+        <td> [<a href="https://github.com/open-mmlab/mmyolo/blob/main/configs/yolov8/yolov8_n_syncbn_fast_8xb16-500e_coco.py">config</a>]  </td>
+        <td> [<a href="https://download.openmmlab.com/mmyolo/v0/yolov8/yolov8_n_syncbn_fast_8xb16-500e_coco/yolov8_n_syncbn_fast_8xb16-500e_coco_20230114_131804-88c11cdb.pth">model</a>] </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> n-MS </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td> 2.9 </td>
+        <td> 4.4 </td>
+        <td> 40.3 (+3.1) </td>
+        <td> 22.0 </td>
+        <td> 44.6 </td>
+        <td> 53.7 </td>
+        <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yolomsv8/yolov8-ms_n_syncbn_fast_8xb16-500e_coco.py">config</a>]  </td>
+        <td> [<a href="https://drive.google.com/file/d/1ssePhnZ4UQSRJk_NvweiQPA5llRFVlpw/view?usp=drive_link">model</a>] </td>
+    </tr>
+    <!-- <tr>
+        <td style="width: 300pt"> s </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td colspan="8" > TBD </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> m </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td colspan="8" > TBD </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> l </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td colspan="8" > TBD </td>
+    </tr>
+    <tr>
+        <td style="width: 300pt"> x </td>
+        <td> 640 </td>
+        <td> 500 </td>
+        <td colspan="8" > TBD </td>
+    </tr> -->
+    </tbody>
+</table>
 
-<details>
-<summary>Evaluation</summary>
-
-```shell
-python -m torch.distributed.launch --nproc_per_node=8 tools/eval.py -f configs/damoyolo_tinynasL25_S.py --ckpt /path/to/your/damoyolo_tinynasL25_S.pth
-```
 </details>
 
+## 🏗️ Supported Tasks [🔝](#-table-of-contents)
 
-<details>
-<summary>Customize tinynas backbone</summary>
-Step1. If you want to customize your own backbone, please refer to [MAE-NAS Tutorial for DAMO-YOLO](https://github.com/alibaba/lightweight-neural-architecture-search/blob/main/scripts/damo-yolo/Tutorial_NAS_for_DAMO-YOLO_cn.md). This is a detailed tutorial about how to obtain an optimal backbone under the budget of latency/flops.  
+- [x] Object Detection
+- [ ] Instance Segmentation (TBD)
+- [ ] Rotated Object Detection (TBD)
+- [ ] Object Tracking (TBD)
+- [ ] Detection in Crowded Scene (TBD)
+- [ ] Small Object Detection (TBD)
 
-Step2. After the searching process completed, you can replace the structure text in configs with it. Finally, you can get your own custom ResNet-like or CSPNet-like backbone after setting the backbone name to TinyNAS_res or TinyNAS_csp. Please notice the difference of out_indices between TinyNAS_res and TinyNAS_csp. 
+## 📖 Citation [🔝](#-table-of-contents)
+
+If you find our repo useful for your research, please cite us:
+
 ```
-structure = self.read_structure('tinynas_customize.txt')
-TinyNAS = { 'name'='TinyNAS_res', # ResNet-like Tinynas backbone
-            'out_indices': (2,4,5)}
-TinyNAS = { 'name'='TinyNAS_csp', # CSPNet-like Tinynas backbone
-            'out_indices': (2,3,4)}
-
-```
-</details>
-
-
-
-## Deploy
-<details>
-<summary>Installation</summary>
-
-Step1. Install ONNX.
-```shell
-pip install onnx==1.8.1
-pip install onnxruntime==1.8.0
-pip install onnx-simplifier==0.3.5
-```
-Step2. Install CUDA、CuDNN、TensorRT and pyCUDA
-
-2.1 CUDA
-```shell
-wget https://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
-sudo sh cuda_10.2.89_440.33.01_linux.run
-export PATH=$PATH:/usr/local/cuda-10.2/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.2/lib64
-source ~/.bashrc
-```
-2.2 CuDNN
-```shell
-sudo cp cuda/include/* /usr/local/cuda/include/
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/
-sudo chmod a+r /usr/local/cuda/include/cudnn.h
-sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
-```
-2.3 TensorRT
-```shell
-cd TensorRT-7.2.1.6/python
-pip install tensorrt-7.2.1.6-cp37-none-linux_x86_64.whl
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:TensorRT-7.2.1.6/lib
-```
-2.4 pycuda
-```shell
-pip install pycuda==2022.1
-```
-</details>
-
-<details>
-<summary>Model Convert</summary>
-
-Now we support trt_int8 quantization, you can specify trt_type as int8 to export the int8 tensorRT engine. You can also try partial quantization to achieve a good compromise between accuracy and latency. Refer to [partial_quantization](./tools/partial_quantization/README.md) for more details.
-
-Step.1 convert torch model to onnx or trt engine, and the output file would be generated in ./deploy. end2end means to export trt with nms. trt_eval means to evaluate the exported trt engine on coco_val dataset after the export compelete.
-```shell
-# onnx export 
-python tools/converter.py -f configs/damoyolo_tinynasL25_S.py -c damoyolo_tinynasL25_S.pth --batch_size 1 --img_size 640
-
-# trt export
-python tools/converter.py -f configs/damoyolo_tinynasL25_S.py -c damoyolo_tinynasL25_S.pth --batch_size 1 --img_size 640 --trt --end2end --trt_eval
-```
-
-Step.2 trt engine evaluation on coco_val dataset. end2end means to using trt_with_nms to evaluation.
-```shell
-python tools/trt_eval.py -f configs/damoyolo_tinynasL25_S.py -trt deploy/damoyolo_tinynasL25_S_end2end_fp16_bs1.trt --batch_size 1 --img_size 640 --end2end
-```
-
-Step.3 onnx or trt engine inference demo and appoint test image/video by --path. end2end means to using trt_with_nms to inference.
-```shell
-# onnx inference
-python tools/demo.py image -f ./configs/damoyolo_tinynasL25_S.py --engine ./damoyolo_tinynasL25_S.onnx --conf 0.6 --infer_size 640 640 --device cuda --path ./assets/dog.jpg
-
-# trt inference
-python tools/demo.py image -f ./configs/damoyolo_tinynasL25_S.py --engine ./deploy/damoyolo_tinynasL25_S_end2end_fp16_bs1.trt --conf 0.6 --infer_size 640 640 --device cuda --path ./assets/dog.jpg --end2end
-```
-</details>
-
-## Industry Application Models:
-We provide DAMO-YOLO models for applications in real scenarios, which are listed as follows. More powerful models are coming, please stay tuned.
-
-|[**Human Detection**](https://www.modelscope.cn/models/damo/cv_tinynas_human-detection_damoyolo/summary)| [**Helmet Detection**](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_safety-helmet/summary)|[**Head Detection**](https://modelscope.cn/models/damo/cv_tinynas_head-detection_damoyolo/summary) | [**Smartphone Detectioin**](https://modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_phone/summary)|
-| :---: | :---: |  :---: | :---: | 
-|<img src='./assets/applications/human_detection.png' height="100px" >| <img src='./assets/applications/helmet_detection.png' height="100px">|<img src='./assets/applications/head_detection.png' height="100px"> | <img src='./assets/applications/smartphone_detection.png' height="100px">|
-|[**Facemask Detection**](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_facemask/summary) |[**Cigarette Detection**](https://www.modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_cigarette/summary) |[**Traffic Sign Detection**](https://modelscope.cn/models/damo/cv_tinynas_object-detection_damoyolo_traffic_sign/summary) | [**NFL-helmet detection**](https://www.modelscope.cn/models/XianzheXu/cv_tinynas_object-detection_damoyolo_nfl-helmet/summary)|
-|<img src='./assets/applications/facemask_detection.png' height="100px">| <img src='./assets/applications/cigarette_detection.png' height="100px">|<img src='./assets/applications/trafficsign_detection.png' height="100px"> | <img src='./assets/applications/nflhelmet_detection.jpg' height="100px">|
-
-
-
-## Third Party Resources
-In order to promote communication among DAMO-YOLO users, we collect third-party resources in this section. If you have original content about DAMO-YOLO, please feel free to contact us at xianzhe.xxz@alibaba-inc.com.
-
-- DAMO-YOLO Overview: **slides**([中文](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/slides/DAMO-YOLO-Overview.pdf) | [English](https://idstcv.oss-cn-zhangjiakou.aliyuncs.com/DAMO-YOLO/slides/DAMO-YOLO-Overview-English.pdf)), **videos**([中文](https://www.bilibili.com/video/BV1hW4y1g7za/?spm_id_from=333.337.search-card.all.click) | [English](https://youtu.be/XYQPI7pvMiQ)).
-- [DAMO-YOLO Code Interpretation](https://blog.csdn.net/jyyqqq/article/details/128419143)
-- [Practical Example for Finetuning on Custom Dataset](https://blog.csdn.net/Cwhgn/article/details/128447380?spm=1001.2014.3001.5501)
-
-
-## Cite DAMO-YOLO
-If you use DAMO-YOLO in your research, please cite our work by using the following BibTeX entry:
-
-```latex
- @article{damoyolo,
-   title={DAMO-YOLO: A Report on Real-Time Object Detection Design},
-   author={Xianzhe Xu, Yiqi Jiang, Weihua Chen, Yilun Huang, Yuan Zhang and Xiuyu Sun},
-   journal={arXiv preprint arXiv:2211.15444v2},
-   year={2022},
- }
-
- @inproceedings{sun2022mae,
-   title={Mae-det: Revisiting maximum entropy principle in zero-shot nas for efficient object detection},
-   author={Sun, Zhenhong and Lin, Ming and Sun, Xiuyu and Tan, Zhiyu and Li, Hao and Jin, Rong},
-   booktitle={International Conference on Machine Learning},
-   pages={20810--20826},
-   year={2022},
-   organization={PMLR}
- }
-
-@inproceedings{jiang2022giraffedet,
-  title={GiraffeDet: A Heavy-Neck Paradigm for Object Detection},
-  author={yiqi jiang and Zhiyu Tan and Junyan Wang and Xiuyu Sun and Ming Lin and Hao Li},
-  booktitle={International Conference on Learning Representations},
-  year={2022},
+@article{Chen2025,
+  title = {YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-time Object Detection},
+  ISSN = {1939-3539},
+  url = {http://dx.doi.org/10.1109/TPAMI.2025.3538473},
+  DOI = {10.1109/tpami.2025.3538473},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  author = {Chen, Yuming and Yuan, Xinbin and Wang, Jiabao and Wu, Ruiqi and Li, Xiang and Hou, Qibin and Cheng, Ming-Ming},
+  year = {2025},
+  pages = {1–14}
 }
 ```
 
+This project is based on the open source codebase [MMYOLO](https://github.com/open-mmlab/mmyolo).
+
+```
+@misc{mmyolo2022,
+    title={{MMYOLO: OpenMMLab YOLO} series toolbox and benchmark},
+    author={MMYOLO Contributors},
+    howpublished = {\url{https://github.com/open-mmlab/mmyolo}},
+    year={2022}
+}
+```
+
+## 📜 License [🔝](#-table-of-contents)
+
+Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
+
+## 📮 Contact [🔝](#-table-of-contents)
+
+For technical questions, please contact `chenyuming[AT]mail.nankai.edu.cn`.
+For commercial licensing, please contact `cmm[AT]nankai.edu.cn` and `andrewhoux[AT]gmail.com`.
+
+## 🤝 Acknowledgement [🔝](#-table-of-contents)
+
+This repo is modified from open source real-time object detection codebase [MMYOLO](https://github.com/open-mmlab/mmyolo).
+The README file is referred to [LED](https://github.com/Srameo/LED) and [CrossKD](https://github.com/jbwang1997/CrossKD)
