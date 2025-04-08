@@ -8,6 +8,8 @@
 
 </div>
 
+<div align="center"><img src="assets/fig2.png" width="1500">
+
 This repository contains the official implementation of the following paper:
 
 > **YOLO-MS: Rethinking Multi-Scale Representation Learning for Real-Time Object Detection**<br/>
