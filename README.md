@@ -53,7 +53,7 @@
         <td> 48.3 </td>
         <td> 60.3 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/1-GdPJX_GAfH9sXAHdRmFRTNR0kL0l5v8/view?usp=drive_link">model</a>] </td>
+        
     </tr>
     <tr>
         <td> S </td>
@@ -66,7 +66,7 @@
         <td> 50.6 </td>
         <td> 62.9 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/1inr-4aI9C4hOynBgmNqKyZ4-60MSoX5F/view?usp=drive_link">model</a>] </td>
+        
     </tr>
     <tr>
         <td> S* </td>
@@ -79,7 +79,7 @@
         <td> 50.5 </td>
         <td> 63.0 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-s-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/12mtXMOJDfuGdxImuPewq3-WJ0kanPjAx/view?usp=drive_link">model</a>] </td>
+        
     </tr>
     <tr>
         <td> - </td>
@@ -92,7 +92,7 @@
         <td> 54.8 </td>
         <td> 66.4 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/10JOBcIDkKDE4UpcKypnf8izSYJ_-z0P7/view?usp=drive_link">model</a>] </td>
+        
     </tr>
     <tr>
         <td> -* </td>
@@ -105,7 +105,7 @@
         <td> 54.8 </td>
         <td> 66.4 </td>
         <td> [<a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-se_syncbn_fast_8xb8-300e_coco.py">config</a>]  </td>
-        <td> [<a href="https://drive.google.com/file/d/1Gf5g7Jssu88wZpPQDwNiqMIEkK4MpsdM/view?usp=drive_link">model</a>] </td>
+        
     </tr>
     <!-- <tr>
         <td> L </td>
