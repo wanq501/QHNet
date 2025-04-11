@@ -102,7 +102,7 @@
 
    ```shell
    git clone https://github.com/wanq501/QHNet.git
-   cd qhnet
+   cd QHNet
    ```
 
 2. Install dependencies
