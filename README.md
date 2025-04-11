@@ -151,6 +151,17 @@ If you find our repo useful for your research, please cite us:
 
 ```
 
+This project is based on the open source codebase [YOLO(Ultralytics)](https://github.com/ultralytics).
+
+```
+@misc{mmyolo2022,
+    title={{MMYOLO: OpenMMLab YOLO} series toolbox and benchmark},
+    author={MMYOLO Contributors},
+    howpublished = {\url{https://github.com/open-mmlab/mmyolo}},
+    year={2022}
+}
+```
+
 ## License
 
 Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
