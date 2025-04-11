@@ -165,9 +165,6 @@ This project is based on the open source codebase [YOLO (Ultralytics)](https://g
 }
 ```
 
-## License
-
-Licensed under a [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/) for Non-commercial use only. Any commercial use should get formal permission first.
 
 
 
