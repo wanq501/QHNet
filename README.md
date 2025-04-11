@@ -102,10 +102,10 @@
 
    ```shell
    git clone https://github.com/wanq501/QHNet.git
-   cd QHNet
+   cd qhnet
    ```
 
-2. Run `install.sh`.
+2. Install QHNet package.
 
    ```shell
    pip install -e .
