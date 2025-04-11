@@ -1,0 +1,16 @@
+# path: ../UAV-YOLO
+path: /root/002_Dataset/DUT_Anti-UAV_YOLO #替换数据集
+train:   #训练集
+#  - train/images
+  - images/train
+val:     #验证集
+#  - val/images
+  - images/val
+test:    #测试集
+#  - test/images
+  - images/test
+
+
+# 类别
+names:
+ 0: UAV

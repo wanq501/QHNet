@@ -4,11 +4,11 @@ from ultralytics import YOLO
 
 if __name__ == '__main__':
     # Load model：Training without pretrained weights
-    model = YOLO(r'path/to/your/QHNet/main/cfg/models/QHNet_N.yaml')  
+    model = YOLO(r'/root/QHNet/ultralytics/cfg/models/QHNet_N.yaml')  
   
     # Training parameters ----------------------------------------------------------------------------------------------
     model.train(
-        data=r'path/to/your/QHNet/main/cfg/datasets/DUT_Anti-UAV_YOLO.yaml',
+        data=r'/root/QHNet/dateset/DUT_Anti-UAV_YOLO.yaml',
         resume=False,  # Resume training from last checkpoint
         epochs=200,  # Number of epochs for training
         patience=50,  # Number of epochs with no improvement after which training stops early
@@ -19,8 +19,8 @@ if __name__ == '__main__':
         cache=False,  # True/ram, disk, or False. Use cache for data loading
         device='',  # Device to run, e.g., cuda device=0, device=0,1,2,3 or device=cpu
         workers=8,  # Number of worker threads for data loading (per DDP process)
-        project='path/to/your/project_directory',  # Project directory name
-        name='your_experiment_name',  # Experiment name; results saved in 'project/name' directory
+        project='/root/QHNet/run',  # Project directory name
+        name='train',  # Experiment name; results saved in 'project/name' directory
         exist_ok=False,  # Overwrite existing experiment
         pretrained=True,  # Use pretrained model weights (bool) or specify model to load weights from (str)
         optimizer='SGD',  # Optimizer to use [SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]

@@ -6,7 +6,7 @@ if __name__ == '__main__':
     # Validate model
     metrics = model.val(
         val=True,  # (bool) Perform validation/testing during training
-        data=r'path/to/your/dataset_config.yaml',
+        data=r'/root/QHNet/dateset/DUT_Anti-UAV_YOLO.yaml',
         split='val',  # (str) Dataset split for validation ('val', 'test', or 'train')
         batch=1,  # (int) Number of images per batch (-1 for automatic batching)
         imgsz=640,  # (int or tuple) Input image size (e.g., 640 or (width, height))
@@ -16,8 +16,8 @@ if __name__ == '__main__':
         save_hybrid=False,  # Save hybrid version of labels (labels + additional predictions)
         conf=0.001,  # Confidence threshold for object detection (default 0.25 for prediction, 0.001 for validation)
         iou=0.6,  # Intersection over Union (IoU) threshold for Non-Maximum Suppression (NMS)
-        project='path/to/your/project_directory',  # Project directory name (optional)
-        name='your_experiment_name',  # Experiment name; results saved in 'project/name' directory (optional)
+        project='/root/QHNet/run',  # Project directory name (optional)
+        name='val',  # Experiment name; results saved in 'project/name' directory (optional)
         max_det=300,  # Maximum number of detections per image
         half=False,  # Use half-precision (FP16)
         dnn=False,  # Use OpenCV DNN for ONNX inference
