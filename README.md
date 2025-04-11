@@ -105,7 +105,7 @@
    cd qhnet
    ```
 
-2. Install QHNet package.
+2. Install dependencies
 
    ```shell
    pip install -e .
