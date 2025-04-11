@@ -91,8 +91,7 @@
   </tbody>
 </table>
 
-- Results of the mAP are evaluated on [DUT-Anti-UAV](https://github.com/wangdongdut/DUT-Anti-UAV) dataset with the input
-  resolution of 640×640.
+- Results of the mAP are evaluated on the DUT-Plus dataset (an augmented version of the [DUT-Anti-UAV](https://github.com/wangdongdut/DUT-Anti-UAV)) with an input resolution of 640×640.
 
 
 
