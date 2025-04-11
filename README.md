@@ -151,14 +151,14 @@ If you find our repo useful for your research, please cite us:
 
 ```
 
-This project is based on the open source codebase [YOLO(Ultralytics)](https://github.com/ultralytics).
+This project is based on the open source codebase [YOLO (Ultralytics)](https://github.com/ultralytics).
 
 ```
-@misc{mmyolo2022,
-    title={{MMYOLO: OpenMMLab YOLO} series toolbox and benchmark},
-    author={MMYOLO Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmyolo}},
-    year={2022}
+@misc{EDGS-YOLOv8,
+  title={EDGS-YOLOv8: An Improved YOLOv8 Lightweight UAV Detection Model},
+  author={Min Huang and Wenkai Mi and Yuming Wang},
+  journal={Drones},
+  year={2024}
 }
 ```
 
