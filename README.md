@@ -8,7 +8,7 @@
 
 </div>
 </h1>
-<img src="qhnet/assets/Fig0.png" width="1500">
+<img src="main/assets/Fig0.png" width="1500">
 
 ## Model Zoo 
 
@@ -37,7 +37,7 @@
       <td>57.1</td>
       <td>88.9</td>
       <td>65.9</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1hySq6bXcZP12WTg-ukFnOA?pwd=e8fm">weight</a></td>
       <td>---</td>
     </tr>
     <tr>
@@ -49,7 +49,7 @@
       <td>60.2</td>
       <td>91.2</td>
       <td>70.1</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1ka7D4E71CMXBwDhz3gpXOw?pwd=f3ak">weight</a></td>
       <td>---</td>
     </tr>
     <tr>
@@ -61,7 +61,7 @@
       <td>62.1</td>
       <td>92.8</td>
       <td>71.4</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1TC71JOBn_mgWrmv6ZhSQ2w?pwd=k5jq">weight</a></td>
       <td>---</td>
     </tr>
     <tr>
@@ -73,7 +73,7 @@
       <td>63.1</td>
       <td>93.2</td>
       <td>71.9</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1pITBN9lTtWW9Zx6jA5xUdA?pwd=aurc">weight</a></td>
       <td>---</td>
     </tr>
     <tr>
@@ -85,13 +85,13 @@
       <td>64.0</td>
       <td>93.8</td>
       <td>74.3</td>
-      <td><a href="https://github.com/FishAndWasabi/YOLO-MS/tree/main/configs/yoloms/yoloms-xs_syncbn_fast_8xb8-300e_coco.py">weight</a></td>
+      <td><a href="https://pan.baidu.com/s/1ml-ihrPirE24wTlU77rliw?pwd=qukr">weight</a></td>
       <td>---</td>
     </tr>
   </tbody>
 </table>
 
-- Results of the mAP are evaluated on [DUT-Anti-UAV](https://cocodataset.org/#download) dataset with the input
+- Results of the mAP are evaluated on [DUT-Anti-UAV](https://github.com/wangdongdut/DUT-Anti-UAV) dataset with the input
   resolution of 640×640.
 
 
