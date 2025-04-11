@@ -154,11 +154,14 @@ If you find our repo useful for your research, please cite us:
 This project is based on the open source codebase [YOLO (Ultralytics)](https://github.com/ultralytics).
 
 ```
-@misc{EDGS-YOLOv8,
-  title={EDGS-YOLOv8: An Improved YOLOv8 Lightweight UAV Detection Model},
-  author={Min Huang and Wenkai Mi and Yuming Wang},
-  journal={Drones},
-  year={2024}
+@misc{YOLOv8,
+  author={Glenn Jocher and Ayush Chaurasia and Jing Qiu},
+  title={YOLOv8 by Ultralytics},
+  version={8.0.0},
+  year={2023},
+  month={jan},
+  license={AGPL-3.0},
+  url={https://github.com/ultralytics/ultralytics}
 }
 ```
 
