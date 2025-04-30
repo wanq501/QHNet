@@ -8,7 +8,7 @@
 
 </div>
 </h1>
-<img src="https://github.com/wanq501/QHNet/blob/main/ultralytics/assets/fig0.jpg" width="1500">
+
 
 ## Model Zoo 
 
