@@ -153,7 +153,6 @@ If you find our repo useful for your research, please cite us:
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={QHNet: A Novel Quad-Head Network for Real-Time Detection of Intruding Drones}, 
   year={2025},
-  keywords={Drones;Feature extraction;Accuracy;Visualization;Real-time systems;Computational modeling;Computational efficiency;YOLO;Surveillance;Convolution;Drone detection;small target;feature fusion;deep learning},
   doi={10.1109/TGRS.2025.3567751}}
 
 ```
