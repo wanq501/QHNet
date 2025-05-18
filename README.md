@@ -8,7 +8,7 @@
 
 </div>
 </h1>
-<!--<img src="ultralytics/assets/fig1.jpg" width="1500">-->
+<img src="ultralytics/assets/fig1.jpg" width="1500">
 
 ## Model Zoo 
 
